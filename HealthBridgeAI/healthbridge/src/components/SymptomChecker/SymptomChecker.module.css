@@ -1,11 +1,4 @@
-/* SymptomChecker.module.css
- *
- * Recreates the structure implied by the original agent-modal / agent-panel
- * / agent-header / agent-messages / agent-input-row markup. The original
- * stylesheet itself wasn't part of what was shared in this thread, so exact
- * property values are a reasonable reconstruction from the HTML/JS — send
- * over the original CSS file if you want pixel-parity tuning.
- */
+
 
 .agentModal {
   position: fixed;
@@ -60,6 +53,20 @@
   margin: 0;
   font-size: 1rem;
   line-height: 1.2;
+  color: #14151a;
+}
+
+[data-theme='dark'] .agentHeaderInfo h3 {
+  color: #f5f5f0;
+}
+
+.agentTitle {
+  color: #14151a;
+  opacity: 1;
+}
+
+[data-theme='dark'] .agentTitle {
+  color: #f5f5f0;
 }
 
 .agentSubtitle {
@@ -142,7 +149,7 @@
 .msgAssistant {
   align-self: flex-start;
   background: var(--surface-muted, #f1f3f6);
-  color: var(--text, #111827);
+  color: #111827;
   border-bottom-left-radius: 4px;
 }
 

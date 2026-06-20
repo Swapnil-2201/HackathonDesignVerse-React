@@ -1,27 +1,12 @@
 import Button from '../ui/Button/Button';
 import HeroStats from './HeroStats';
 import styles from './Hero.module.css';
+import { useAISymptomChecker } from '../../hooks/useAISymptomChecker';
 
-/**
- * Hero — the landing section (`#top`).
- *
- * Ported from the legacy markup: eyebrow badge, gradient-accented headline,
- * subheading, a single primary CTA, the stats row (HeroStats), a hand-built
- * SVG illustration (shield + heartbeat pulse + floating dots), and the
- * bouncing scroll cue anchored to the bottom of the viewport.
- *
- * The illustration is kept inline here rather than split into its own file:
- * it's a one-off decorative graphic used only on this section, not a
- * reusable unit, so a separate HeroIllustration.jsx would just add an
- * import without adding reusability.
- *
- * CTA wiring: the legacy "Get Started" button also carried `.agent-trigger`
- * (opens the AI Symptom Checker modal). AgentContext doesn't expose an
- * openModal() action yet — see the same TODO left in Navbar.jsx — so for
- * now this is a plain anchor to #checker, which is still functionally
- * correct (it scrolls to the right section).
- */
+
 export default function Hero() {
+  const { openModal } = useAISymptomChecker();
+
   return (
     <section className={styles.hero} id="top">
       <div className={styles.heroGlow} aria-hidden="true" />
@@ -43,7 +28,7 @@ export default function Hero() {
           </p>
 
           <div className={styles.heroActions}>
-            <Button href="#checker" variant="primary" size="lg" icon="fa-stethoscope">
+            <Button onClick={openModal} variant="primary" size="lg" icon="fa-stethoscope">
               Get Started
             </Button>
             {/* TODO: wire to AgentContext.openModal() once it exists,
