@@ -31,8 +31,7 @@ export default function Hero() {
             <Button onClick={openModal} variant="primary" size="lg" icon="fa-stethoscope">
               Get Started
             </Button>
-            {/* TODO: wire to AgentContext.openModal() once it exists,
-                matching the legacy .agent-trigger behavior. */}
+            
           </div>
 
           <HeroStats />
