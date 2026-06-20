@@ -1,0 +1,77 @@
+/* =========================================================
+   Button.module.css
+   Replaces the legacy .btn / .btn-primary / .btn-outline /
+   .btn-emergency / .btn-lg / .btn-sm class combinations with a single
+   component's variant/size props. Colors and shape all come from
+   styles/tokens.css custom properties.
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s var(--ease),
+    box-shadow 0.2s var(--ease),
+    background 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ---------- Variants ---------- */
+.primary {
+  background: var(--yellow);
+  color: var(--on-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.primary:hover {
+  background: var(--amber);
+}
+
+.outline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+
+.outline:hover {
+  background: var(--glass-bg);
+  border-color: var(--yellow);
+}
+
+.emergency {
+  background: var(--danger);
+  color: #fff;
+}
+
+.emergency:hover {
+  background: #c8392f;
+}
+
+/* ---------- Sizes ---------- */
+.lg {
+  padding: 16px 34px;
+  font-size: 1.05rem;
+}
+
+.sm {
+  padding: 9px 18px;
+  font-size: 0.85rem;
+}

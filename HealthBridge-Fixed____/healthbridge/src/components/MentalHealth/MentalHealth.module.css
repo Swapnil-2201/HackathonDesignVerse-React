@@ -1,0 +1,113 @@
+/* =========================================================
+   MentalHealth.module.css
+   Layout for the "#mental-health" section: a 4-up card grid
+   (MentalHealthCard supplies its own glassmorphism via the global
+   .glassCard class) plus the EmergencyBanner underneath. Container/
+   breakpoint values match the 1240px / 24px pattern used throughout.
+   ========================================================= */
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Card grid ---------- */
+.mhGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.mhCard {
+  padding: 30px 26px;
+}
+
+.mhIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+  color: var(--yellow);
+  background: rgba(var(--accent-rgb), 0.1);
+}
+
+.mhCard h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.mhTip {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- Emergency banner ---------- */
+.emergencyBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 32px;
+  border-color: rgba(224, 71, 62, 0.3);
+}
+
+.emergencyText {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+  min-width: 240px;
+}
+
+.emergencyText > i {
+  color: var(--danger);
+  font-size: 1.4rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.emergencyText h4 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.emergencyText p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .mhGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .mhGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .emergencyBanner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .emergencyText {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

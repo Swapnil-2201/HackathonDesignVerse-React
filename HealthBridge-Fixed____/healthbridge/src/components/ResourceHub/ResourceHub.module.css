@@ -1,0 +1,271 @@
+/* src/components/ResourceHub/ResourceHub.module.css */
+
+/* ─── PIN Search Card ─────────────────────────────────────────── */
+
+.pinCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pinForm {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pinField {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+}
+
+.pinField i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted, #6b7280);
+  pointer-events: none;
+  font-size: 0.95rem;
+}
+
+.pinField input {
+  width: 100%;
+  padding: 0.65rem 1rem 0.65rem 2.5rem;
+  border: 1.5px solid var(--border, #e5e7eb);
+  border-radius: var(--radius, 0.5rem);
+  background: var(--surface, #fff);
+  color: var(--text, #111);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.pinField input:focus {
+  border-color: var(--primary, #2563eb);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary, #2563eb) 15%, transparent);
+}
+
+.pinStatus {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted, #6b7280);
+  transition: color 0.2s;
+}
+
+.pinStatusActive {
+  color: var(--primary, #2563eb);
+  font-weight: 500;
+}
+
+/* ─── Map Card ────────────────────────────────────────────────── */
+
+.mapCard {
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 2rem;
+  min-height: 320px;
+  position: relative;
+}
+
+.mapCard.mapCardHasResults .mapEmpty {
+  display: none;
+}
+
+.mapWrap {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.mapFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.mapEmpty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: color-mix(in srgb, var(--surface, #fff) 88%, transparent);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  padding: 2rem;
+}
+
+.mapEmpty i {
+  font-size: 2.5rem;
+  color: var(--primary, #2563eb);
+  opacity: 0.45;
+}
+
+.mapEmpty p {
+  margin: 0;
+  color: var(--text-muted, #6b7280);
+  font-size: 0.9rem;
+  max-width: 22ch;
+}
+
+/* ─── Resource Grid ───────────────────────────────────────────── */
+
+.resourceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ─── Resource Card ───────────────────────────────────────────── */
+
+.resourceCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.resourceCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--primary, #2563eb) 12%, transparent);
+}
+
+.resourceCardEmergency {
+  border-color: color-mix(in srgb, #ef4444 30%, transparent);
+}
+
+.resourceCardEmergency:hover {
+  box-shadow: 0 8px 28px color-mix(in srgb, #ef4444 14%, transparent);
+}
+
+.resourceIcon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  background: color-mix(in srgb, var(--primary, #2563eb) 12%, transparent);
+  color: var(--primary, #2563eb);
+  flex-shrink: 0;
+}
+
+.resourceIconEmergency {
+  background: color-mix(in srgb, #ef4444 12%, transparent);
+  color: #ef4444;
+}
+
+.resourceTitle {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text, #111);
+  line-height: 1.3;
+}
+
+.resourceDesc {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.resourceCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary, #2563eb);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s;
+}
+
+.resourceCta:hover {
+  opacity: 0.75;
+}
+
+.resourceCta:focus-visible {
+  outline: 2px solid var(--primary, #2563eb);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ─── Emergency Numbers ───────────────────────────────────────── */
+
+.emergencyNumbers {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.emergencyNumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, #ef4444 10%, transparent);
+  border: 1.5px solid color-mix(in srgb, #ef4444 25%, transparent);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.emergencyNumber:hover {
+  background: color-mix(in srgb, #ef4444 18%, transparent);
+}
+
+.emergencyNumber strong {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ef4444;
+  line-height: 1;
+}
+
+.emergencyNumber span {
+  font-size: 0.7rem;
+  color: var(--text-muted, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .pinForm {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pinField {
+    min-width: unset;
+  }
+
+  .resourceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mapWrap {
+    height: 240px;
+  }
+}

@@ -1,0 +1,102 @@
+/* =========================================================
+   TrustSection.module.css
+   Layout for the "#trust" credibility section: a 4-up card grid
+   (TrustCard supplies its own glassmorphism via the global .glassCard
+   class) plus a stats row underneath. Container/breakpoint values
+   match the 1240px / 24px pattern already used in Hero and Navbar.
+   ========================================================= */
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Card grid ---------- */
+.trustGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.trustCard {
+  padding: 32px 28px;
+  text-align: center;
+}
+
+.trustIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+  color: var(--yellow);
+  background: rgba(var(--accent-rgb), 0.1);
+}
+
+.trustCard h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.trustCard p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* ---------- Stats row ---------- */
+.statsRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 56px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statBlock strong {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text);
+  background: linear-gradient(100deg, var(--yellow), var(--amber) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statBlock span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .trustGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .trustGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statsRow {
+    gap: 36px;
+  }
+}

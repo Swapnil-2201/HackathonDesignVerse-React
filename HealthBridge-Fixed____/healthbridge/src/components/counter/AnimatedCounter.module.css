@@ -1,0 +1,26 @@
+/* =========================================================
+   AnimatedCounter.module.css
+   Standalone reusable stat block: a big animated number plus a small
+   muted label underneath. Not currently mounted anywhere in App.jsx
+   (same status as RiskMeter/ResourceHub/SymptomCheckerModal — built,
+   available, awaiting integration) but styled to match the rest of the
+   site's stat presentation (see TrustSection's .statBlock).
+   ========================================================= */
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}

@@ -1,0 +1,91 @@
+/* =========================================================
+   Stories.module.css
+   Layout for the "#stories" testimonial section: a 3-up card grid
+   (StoryCard supplies its own glassmorphism via the global .glassCard
+   class). Container/breakpoint values match the 1240px / 24px
+   pattern used throughout the rest of the site.
+   ========================================================= */
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Card grid ---------- */
+.storiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.storyCard {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+}
+
+.quoteIcon {
+  color: var(--yellow);
+  font-size: 1.4rem;
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.storyQuote {
+  flex: 1;
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+/* ---------- Attribution row ---------- */
+.storyMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.storyAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: linear-gradient(135deg, var(--yellow), var(--amber));
+  color: var(--on-accent);
+}
+
+.storyMeta strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.storyMeta small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .storiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .storiesGrid {
+    grid-template-columns: 1fr;
+  }
+}

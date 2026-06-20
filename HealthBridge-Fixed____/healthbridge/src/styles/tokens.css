@@ -1,0 +1,59 @@
+/* =========================================================
+   tokens.css
+   Design tokens — light theme is the default (`:root`), dark theme
+   overrides via `[data-theme="dark"]` on <html>, toggled by
+   ThemeContext. Matches the variable names already in use across
+   Navbar, ThemeToggle, Hero, and BarrierSection.
+   ========================================================= */
+
+:root {
+  /* Brand accent */
+  --yellow: #FFC93C;
+  --amber: #FFA800;
+  --accent-rgb: 255, 201, 60;
+  --on-accent: #1a1400;
+
+  /* Surface + text */
+  --bg: #ffffff;
+  --text: #14151a;
+  --muted: #5b5f6b;
+  --border: rgba(20, 21, 26, 0.10);
+  --danger: #e0473e;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(20, 21, 26, 0.08);
+  --shadow-glow: 0 18px 40px -16px rgba(var(--accent-rgb), 0.35);
+
+  /* Section backgrounds */
+  --section-alt-mid: #f6f6f8;
+  --hero-glow-color: rgba(var(--accent-rgb), 0.18);
+  --nav-scrolled-bg: rgba(255, 255, 255, 0.75);
+  --mobile-nav-bg: rgba(255, 255, 255, 0.92);
+
+  /* Type */
+  --font-display: 'Poppins', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Shape + motion */
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme='dark'] {
+  --bg: #0a0a0a;
+  --text: #f5f5f0;
+  --muted: #8a8a8a;
+  --border: rgba(255, 255, 255, 0.08);
+  --danger: #ff6b61;
+
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --shadow-glow: 0 18px 40px -16px rgba(var(--accent-rgb), 0.25);
+
+  --section-alt-mid: #111111;
+  --hero-glow-color: rgba(var(--accent-rgb), 0.12);
+  --nav-scrolled-bg: rgba(10, 10, 10, 0.75);
+  --mobile-nav-bg: rgba(10, 10, 10, 0.92);
+}

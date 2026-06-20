@@ -1,0 +1,33 @@
+/* =========================================================
+   ThemeToggle.module.css
+   Small round icon button, sits inline with the Navbar's nav links.
+   Uses the same glass/border tokens as the rest of the chrome rather
+   than introducing new ones.
+   ========================================================= */
+
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    background 0.25s var(--ease),
+    transform 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+
+.themeToggle:hover {
+  background: rgba(var(--accent-rgb), 0.15);
+  color: var(--yellow);
+}
+
+.themeToggle:active {
+  transform: scale(0.92);
+}
