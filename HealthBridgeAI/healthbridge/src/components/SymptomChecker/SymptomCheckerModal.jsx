@@ -120,7 +120,7 @@ export function SymptomCheckerModal() {
               <i className="fa-solid fa-heart-pulse" />
             </span>
             <div>
-              <h3 id="agentTitle">HealthBridge AI Guide</h3>
+              <h3 id="agentTitle" className={styles.agentTitle}>HealthBridge AI Guide</h3>
               <p className={styles.agentSubtitle}>Private conversation · Not a diagnosis</p>
             </div>
           </div>
